@@ -34,6 +34,9 @@ Vid inloggning och registrering skickas följande som JSON:
   ## JWT Token
   När en användare har registrerat ett konto och loggat in på det så skickas en JWT Token med, detta sparas i localStorage under en viss tid. Så länge användaren har detta token i sin localStorage kommer den att komma åt en del av webbplatsen som använder denna webbtjänst som annars inte är tillgänglig.  
 
+  ## Länk till API
+  [https://backend-moment4-del1.onrender.com/api/protected](https://backend-moment4-del1.onrender.com/api/protected) 
+
 
 
 
