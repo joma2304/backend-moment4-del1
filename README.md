@@ -11,7 +11,8 @@ Lösenorden hashas för att säkerställa att de är lagrade på ett säkert sä
     "password": "$2b$10$lefiKjyp1HA/s0s/GQFky.rCN4JRfZyfq8l6oFaE7noWwWsf1D9Mu",
     "created": "2024-05-04T11:24:52.767+00:00",
     "__v": 0
-  },
+  }
+  ```
 
 ## Användning
 Hur API:et används för olika ändamål:
@@ -26,8 +27,9 @@ Vid inloggning och registrering skickas följande som JSON:
 ```
   {
     "username": "johan",
-    "password": "exempel123",
-  },
+    "password": "exempel123"
+  }
+  ```
 
   ## JWT Token
   När en användare har registrerat ett konto och loggat in på det så skickas en JWT Token med, detta sparas i localStorage under en viss tid. Så länge användaren har detta token i sin localStorage kommer den att komma åt en del av webbplatsen som använder denna webbtjänst som annars inte är tillgänglig.  
