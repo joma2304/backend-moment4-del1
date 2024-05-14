@@ -7,6 +7,14 @@ const path = require("path");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
+//Anslut till mongodb
+mongoose.set("strictQuery", false);
+mongoose.connect(process.env.DATABASE).then(() => {
+    console.log("Connected to MongoDB");
+}).catch((error) => {
+    console.error("Error connectiong to database...");
+});
+
 //validera token
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];

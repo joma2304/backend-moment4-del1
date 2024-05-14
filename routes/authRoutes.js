@@ -6,14 +6,6 @@ const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
-//Anslut till mongodb
-mongoose.set("strictQuery", false);
-mongoose.connect(process.env.DATABASE).then(() => {
-    console.log("Connected to MongoDB");
-}).catch((error) => {
-    console.error("Error connectiong to database...");
-});
-
 //User model
 const User = require("../models/User");
 
