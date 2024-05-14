@@ -21,6 +21,7 @@ Hur API:et används för olika ändamål:
 |-------|-------------|--------------------------------------------------------------------------------------|
 |POST    |/api/register     |För att lägga till en ny användare.                                             |
 |POST    |/api/login |För att logga in men ett befintligt användar-konto.                                    |
+|GET     |/api/protected/username | För att hämta användarnamnet för den inloggade användaren                |
 
 ## Inlogging och registrering
 Vid inloggning och registrering skickas följande som JSON: 
