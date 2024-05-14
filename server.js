@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const authRoutes = require("./routes/authRoutes");
+const protected = require("./routes/protected");
 const path = require("path"); 
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
@@ -16,9 +17,7 @@ app.use(cors());
 app.use("/api", authRoutes);
 
 //Skyddad route
-app.get("/api/protected", authenticateToken, (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "protected.html"))
-});
+app.use("/api/protected", authenticateToken, protected);
 
 //validera token
 function authenticateToken(req, res, next) {
