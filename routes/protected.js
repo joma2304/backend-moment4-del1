@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const authenticateToken = require("autenticateToken")
+const authenticateToken = require("../path/to/authenticateToken");
 require("dotenv").config();
 
 //Anslut till mongodb
@@ -15,7 +15,7 @@ mongoose.connect(process.env.DATABASE).then(() => {
     console.error("Error connectiong to database...");
 });
 
-router.get('/username', async (req, res) => {
+router.get('/username', authenticateToken, async (req, res) => {
   try {
     // Använd användarnamnet från användaren
     const loggedInUsername = req.user.username;

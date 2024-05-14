@@ -7,12 +7,6 @@ const path = require("path");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-
-const app = express();
-const port = process.env.PORT || 3000;
-app.use(bodyParser.json());
-app.use(cors());
-
 //validera token
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
@@ -27,6 +21,11 @@ function authenticateToken(req, res, next) {
         next();
     });
 }
+
+const app = express();
+const port = process.env.PORT || 3000;
+app.use(bodyParser.json());
+app.use(cors());
 
 // Exportera authenticateToken-funktionen så att den kan användas i andra filer
 module.exports.authenticateToken = authenticateToken;
