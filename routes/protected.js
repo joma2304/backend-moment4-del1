@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
+const authenticateToken = require("autenticateToken")
 require("dotenv").config();
 
 //Anslut till mongodb
