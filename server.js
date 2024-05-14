@@ -13,12 +13,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-//Routes
-app.use("/api", authRoutes);
-
-//Skyddad route
-app.use("/api/protected", authenticateToken, protected);
-
 //validera token
 function authenticateToken(req, res, next) {
     const authHeader = req.headers['authorization'];
@@ -33,6 +27,12 @@ function authenticateToken(req, res, next) {
         next();
     });
 }
+
+//Routes
+app.use("/api", authRoutes);
+
+//Skyddad route
+app.use("/api/protected", authenticateToken, protected);
 
 //Starta app
 app.listen(port, () => {
